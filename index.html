@@ -37,30 +37,31 @@
     --radius-md: 22px;
     --radius-sm: 14px;
 
-
     --container: 1200px;
-
 }
-
 
 
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
-
 
 
 body {
 
-    font-family:"Inter", sans-serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    font-family: "Inter", sans-serif;
 
     background:
     radial-gradient(
@@ -70,12 +71,8 @@ body {
     ),
     var(--bg);
 
-    color:var(--text);
-
-    overflow-x:hidden;
-
+    color: var(--text);
 }
-
 
 
 h1,h2,h3 {
