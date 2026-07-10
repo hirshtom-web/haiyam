@@ -789,94 +789,134 @@ SERVICE CARDS
 WHY HAIYAM
 ===================== */
 
-/* ===============================
-   TM HEAL100 SECTION
-================================ */
 
 .tm-heal100{
+
 display:flex;
 min-height:700px;
 overflow:hidden;
 background:transparent;
+font-family:inherit;
+
 }
+
 
 .tm-heal100__visual,
 .tm-heal100__content{
+
 width:50%;
 position:relative;
+
 }
 
-/* RIGHT SIDE */
+
+/* ===============================
+   RIGHT SIDE
+================================ */
 
 .tm-heal100__content{
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 padding:80px;
+
 }
+
+
+/* Uses your site's existing H2 styling */
 
 .tm-heal100__headline{
-font-size:64px;
-font-weight:700;
+
+font-family:inherit;
+font-size:inherit;
+font-weight:inherit;
+line-height:inherit;
+letter-spacing:inherit;
 margin-bottom:20px;
+
 }
 
+
 .tm-heal100__text{
+
+font-family:inherit;
 font-size:18px;
 line-height:1.8;
 max-width:520px;
 margin-bottom:60px;
 color:#666;
+
 }
 
-/* STATS */
+
+/* ===============================
+   STATS
+================================ */
+
 
 .tm-heal100__stats{
+
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:40px;
+
 }
 
-.tm-heal100__card{}
 
 .tm-heal100__number{
 
+font-family:inherit;
 font-size:54px;
 font-weight:700;
-margin:0;
+line-height:1;
+margin:0 0 8px;
 
-background:linear-gradient(90deg,#7B4DFF,#2EA8FF);
+
+background:linear-gradient(
+90deg,
+#7B4DFF,
+#2EA8FF
+);
+
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
 }
 
+
 .tm-heal100__label{
 
+font-family:inherit;
 font-size:15px;
 letter-spacing:.5px;
 color:#666;
 
 }
 
+
 /* ===============================
    DESKTOP VISUAL
 ================================ */
+
 
 .tm-heal100__bg{
 
 position:absolute;
 inset:0;
 
-/* Replace with your abstract image */
-
-background:url("abstract-bg.png") center center / contain no-repeat;
+background:url("abstract-bg.png")
+center center /
+contain
+no-repeat;
 
 opacity:.25;
 
 pointer-events:none;
 
 }
+
 
 .tm-heal100__floating{
 
@@ -885,97 +925,153 @@ inset:0;
 
 }
 
+
 .tm-heal100__logo{
 
 position:absolute;
 width:90px;
+height:auto;
 
 animation:tm-heal100-float 8s ease-in-out infinite;
 
 }
 
-/* Random positions */
+
+/* Logo Positions */
 
 .tm-heal100__logo--1{
+
 top:8%;
 left:10%;
+
 }
+
 
 .tm-heal100__logo--2{
+
 top:25%;
 right:12%;
+
 }
+
 
 .tm-heal100__logo--3{
+
 top:40%;
 left:35%;
+
 }
+
 
 .tm-heal100__logo--4{
+
 bottom:20%;
 left:12%;
+
 }
+
 
 .tm-heal100__logo--5{
+
 bottom:8%;
 right:15%;
+
 }
+
 
 .tm-heal100__logo--6{
+
 top:60%;
 right:35%;
+
 }
+
 
 .tm-heal100__logo--7{
+
 top:12%;
 left:55%;
+
 }
 
-/* Different movement speeds */
+
+/* Different floating speeds */
 
 .tm-heal100__logo:nth-child(2){
+
 animation-duration:11s;
+
 }
+
 
 .tm-heal100__logo:nth-child(3){
+
 animation-duration:9s;
+
 }
+
 
 .tm-heal100__logo:nth-child(4){
+
 animation-duration:13s;
+
 }
+
 
 .tm-heal100__logo:nth-child(5){
+
 animation-duration:10s;
+
 }
+
 
 .tm-heal100__logo:nth-child(6){
+
 animation-duration:8s;
+
 }
 
+
 .tm-heal100__logo:nth-child(7){
+
 animation-duration:12s;
+
 }
+
+
 
 @keyframes tm-heal100-float{
 
+
 0%{
-transform:translateY(0) translateX(0);
+
+transform:translate3d(0,0,0);
+
 }
+
 
 50%{
-transform:translateY(-12px) translateX(8px);
+
+transform:translate3d(8px,-12px,0);
+
 }
+
 
 100%{
-transform:translateY(0) translateX(0);
-}
+
+transform:translate3d(0,0,0);
 
 }
+
+
+}
+
+
 
 /* ===============================
    MOBILE LOGO SLIDER
 ================================ */
+
 
 .tm-heal100__slider{
 
@@ -984,6 +1080,7 @@ overflow:hidden;
 padding:40px 0;
 
 }
+
 
 .tm-heal100__track{
 
@@ -995,36 +1092,53 @@ animation:tm-heal100-slide 28s linear infinite;
 
 }
 
+
 .tm-heal100__track img{
 
 width:70px;
 height:auto;
+flex-shrink:0;
 
 }
+
+
 
 @keyframes tm-heal100-slide{
 
+
 from{
+
 transform:translateX(0);
+
 }
+
 
 to{
+
 transform:translateX(-50%);
-}
 
 }
+
+
+}
+
+
 
 /* ===============================
    MOBILE
 ================================ */
 
-@media (max-width:768px){
+
+@media(max-width:768px){
+
 
 .tm-heal100{
 
 flex-direction:column;
 
 }
+
+
 
 .tm-heal100__visual,
 .tm-heal100__content{
@@ -1033,7 +1147,8 @@ width:100%;
 
 }
 
-/* Hide desktop artwork */
+
+/* Hide desktop logo artwork */
 
 .tm-heal100__bg,
 .tm-heal100__floating{
@@ -1042,13 +1157,17 @@ display:none;
 
 }
 
-/* Show slider */
+
+
+/* Show mobile slider */
 
 .tm-heal100__slider{
 
 display:block;
 
 }
+
+
 
 .tm-heal100__content{
 
@@ -1057,26 +1176,42 @@ padding:40px 24px;
 
 }
 
+
+
 .tm-heal100__visual{
 
 order:2;
 
 }
 
-.tm-heal100__headline{
+
+
+.tm-heal100__text{
+
+font-size:16px;
+margin-bottom:40px;
+
+}
+
+
+
+.tm-heal100__stats{
+
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+
+}
+
+
+
+.tm-heal100__number{
 
 font-size:42px;
 
 }
 
-.tm-heal100__stats{
-
-grid-template-columns:repeat(2,1fr);
 
 }
-
-}
-
 
 /* =====================
 APPROACH TIMELINE
