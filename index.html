@@ -122,72 +122,61 @@ a {
 LOADER
 ===================== */
 
-
 .loader {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    background:#fff;
+    background: #fff;
 
-    z-index:9999;
+    z-index: 9999;
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:center;
+    align-items: center;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    gap:20px;
-
-    font-family:"Space Grotesk";
-
-    font-size:24px;
-
-    transition:.8s;
-
+    transition: .8s;
 }
 
+
+.loader img {
+
+    width: 160px;
+
+    height: auto;
+
+    display: block;
+
+    animation: logoIn 1s ease forwards;
+
+}
 
 
 .loader.hide {
 
-    opacity:0;
+    opacity: 0;
 
-    pointer-events:none;
-
-}
-
-
-
-.loader-circle {
-
-    width:70px;
-
-    height:70px;
-
-    border-radius:50%;
-
-    border:5px solid #eee;
-
-    border-top-color:var(--accent);
-
-    animation:spin 1s linear infinite;
+    pointer-events: none;
 
 }
 
 
+@keyframes logoIn {
 
-@keyframes spin {
-
-    to {
-        transform:rotate(360deg);
+    from {
+        opacity:0;
+        transform: translateY(15px) scale(.95);
     }
 
-}
+    to {
+        opacity:1;
+        transform: translateY(0) scale(1);
+    }
 
 
 
@@ -1431,8 +1420,7 @@ ACCESSIBILITY
 
 <!-- Loading Screen -->
 <div class="loader">
-    <div class="loader-circle"></div>
-    <span>Haiyam</span>
+    <img src="https://static.wixstatic.com/shapes/1799ca_c687fe60849245878852238f031f1f3d.svg" alt="Haiyam">
 </div>
 
 
