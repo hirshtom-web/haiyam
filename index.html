@@ -790,16 +790,218 @@ SERVICE CARDS
 WHY HAIYAM
 ===================== */
 
+.healing-section{
+display:flex;
+min-height:700px;
+background:#fff;
+overflow:hidden;
+}
 
-.feature-grid {
+.left-side,
+.right-side{
+width:50%;
+position:relative;
+}
 
-    display:grid;
+.right-side{
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:80px;
+}
 
-    grid-template-columns:repeat(4,1fr);
+.right-side h2{
+font-size:64px;
+font-weight:700;
+margin-bottom:20px;
+}
 
-    gap:22px;
+.right-side p{
+font-size:18px;
+line-height:1.8;
+max-width:520px;
+margin-bottom:60px;
+color:#666;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+}
+
+.stat h3{
+
+font-size:54px;
+font-weight:700;
+margin:0;
+
+background:linear-gradient(90deg,#7B4DFF,#2EA8FF);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 
 }
+
+.stat span{
+
+font-size:15px;
+letter-spacing:.5px;
+color:#666;
+
+}
+
+/* LEFT */
+
+.overlay-image{
+
+position:absolute;
+inset:0;
+
+background:url("background.jpg") center/cover no-repeat;
+
+opacity:.18;
+
+}
+
+.floating-logos{
+
+position:absolute;
+inset:0;
+
+}
+
+.logo{
+
+position:absolute;
+width:90px;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.l1{top:8%;left:10%;}
+.l2{top:25%;right:12%;}
+.l3{top:40%;left:35%;}
+.l4{bottom:20%;left:12%;}
+.l5{bottom:8%;right:15%;}
+.l6{top:60%;right:35%;}
+.l7{top:12%;left:55%;}
+
+.logo:nth-child(2){animation-duration:11s;}
+.logo:nth-child(3){animation-duration:9s;}
+.logo:nth-child(4){animation-duration:13s;}
+.logo:nth-child(5){animation-duration:10s;}
+.logo:nth-child(6){animation-duration:8s;}
+.logo:nth-child(7){animation-duration:12s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px) rotate(0deg);
+}
+
+50%{
+transform:translateY(-12px) translateX(8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE SLIDER */
+
+.logo-slider{
+
+display:none;
+overflow:hidden;
+padding:40px 0;
+
+}
+
+.track{
+
+display:flex;
+gap:60px;
+width:max-content;
+
+animation:slide 28s linear infinite;
+
+}
+
+.track img{
+
+width:70px;
+
+}
+
+@keyframes slide{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+
+}
+
+@media(max-width:768px){
+
+.healing-section{
+
+flex-direction:column;
+
+}
+
+.left-side,
+.right-side{
+
+width:100%;
+
+}
+
+.overlay-image,
+.floating-logos{
+
+display:none;
+
+}
+
+.logo-slider{
+
+display:block;
+
+}
+
+.right-side{
+
+order:1;
+padding:40px 24px;
+
+}
+
+.left-side{
+
+order:2;
+
+}
+
+.right-side h2{
+
+font-size:42px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
 
 
 
@@ -1676,67 +1878,94 @@ Build sustainable expansion through optimization and partnerships.
 
 <!-- WHY HAIYAM -->
 
-<section id="why" class="section">
+<section class="healing-section">
 
-<div class="container">
+    <!-- LEFT -->
+    <div class="left-side">
 
-<div class="section-title reveal">
+        <div class="overlay-image"></div>
 
-<div class="title-bubble"></div>
+        <div class="floating-logos">
 
-<h2>
-Why Haiyam
-</h2>
+            <img src="logo1.svg" class="logo l1">
+            <img src="logo2.svg" class="logo l2">
+            <img src="logo3.svg" class="logo l3">
+            <img src="logo4.svg" class="logo l4">
+            <img src="logo5.svg" class="logo l5">
+            <img src="logo6.svg" class="logo l6">
+            <img src="logo7.svg" class="logo l7">
 
-<p>
-International thinking combined with deep local expertise.
-</p>
+        </div>
 
-</div>
+        <!-- Mobile Slider -->
 
+        <div class="logo-slider">
 
+            <div class="track">
 
-<div class="feature-grid">
+                <img src="logo1.svg">
+                <img src="logo2.svg">
+                <img src="logo3.svg">
+                <img src="logo4.svg">
+                <img src="logo5.svg">
+                <img src="logo6.svg">
+                <img src="logo7.svg">
 
+                <!-- Duplicate for seamless loop -->
 
-<div class="feature-card reveal">
-<h3>Strategic Thinking</h3>
-<p>
-Building market strategies designed for sustainable growth.
-</p>
-</div>
+                <img src="logo1.svg">
+                <img src="logo2.svg">
+                <img src="logo3.svg">
+                <img src="logo4.svg">
+                <img src="logo5.svg">
+                <img src="logo6.svg">
+                <img src="logo7.svg">
 
+            </div>
 
-<div class="feature-card reveal">
-<h3>Local Knowledge</h3>
-<p>
-Deep understanding of Israeli consumers, retail, and partnerships.
-</p>
-</div>
+        </div>
 
+    </div>
 
-<div class="feature-card reveal">
-<h3>Execution Mindset</h3>
-<p>
-Hands-on involvement from strategy through launch and growth.
-</p>
-</div>
+    <!-- RIGHT -->
 
+    <div class="right-side">
 
-<div class="feature-card reveal">
-<h3>Long-Term Commitment</h3>
-<p>
-Focused on building businesses, not just launching products.
-</p>
-</div>
+        <h2>Healing <span>100+</span></h2>
 
+        <p>
+            Trusted by thousands of patients worldwide through advanced
+            regenerative therapies focused on natural healing and long-term
+            wellness.
+        </p>
 
-</div>
+        <div class="stats">
 
-</div>
+            <div class="stat">
+                <h3 data-count="5000">0</h3>
+                <span>Patients Helped</span>
+            </div>
+
+            <div class="stat">
+                <h3 data-count="98">0</h3>
+                <span>Success Rate</span>
+            </div>
+
+            <div class="stat">
+                <h3 data-count="15">0</h3>
+                <span>Years Experience</span>
+            </div>
+
+            <div class="stat">
+                <h3 data-count="20">0</h3>
+                <span>Countries Served</span>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
-
 
 
 
@@ -2238,6 +2467,53 @@ Let's Talk →
 
 
 });
+
+    const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+document.querySelectorAll(".stat h3").forEach(counter=>{
+
+const target=+counter.dataset.count;
+
+let current=0;
+
+const speed=target/80;
+
+const update=()=>{
+
+current+=speed;
+
+if(current<target){
+
+counter.innerText=Math.floor(current);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+}
+
+update();
+
+});
+
+observer.disconnect();
+
+}
+
+});
+
+});
+
+observer.observe(document.querySelector(".stats"));
+    
   </script>
 
 </body>
