@@ -1864,6 +1864,657 @@ ACCESSIBILITY
 }
 
 }
+
+
+      /* =====================
+HAIYAM WORKFLOW
+===================== */
+
+
+.haiyam-flow{
+
+    overflow:hidden;
+
+}
+
+
+.haiyam-flow__header{
+
+    max-width:700px;
+    margin-bottom:70px;
+
+}
+
+
+.haiyam-flow__header h2{
+
+    margin-bottom:20px;
+
+}
+
+
+.haiyam-flow__header h2 span{
+
+    background:linear-gradient(
+        90deg,
+        #EC4899,
+        #8B5CF6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+.haiyam-flow__header p{
+
+    opacity:.7;
+    font-size:18px;
+    line-height:1.6;
+
+}
+
+
+
+
+/* TOP CARDS */
+
+.haiyam-flow__inputs{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+
+
+.flow-card{
+
+    position:relative;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+}
+
+
+.flow-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 50px rgba(139,92,246,.12);
+
+}
+
+
+
+.flow-icon{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+.flow-card h3{
+
+    margin-bottom:12px;
+
+}
+
+
+.flow-card p{
+
+    opacity:.65;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+/* =====================
+ENERGY CABLE
+===================== */
+
+
+.flow-connector{
+
+    height:180px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.flow-connector svg{
+
+    width:600px;
+
+    max-width:90%;
+
+    overflow:visible;
+
+}
+
+
+
+
+.energy-glow{
+
+
+    fill:none;
+
+    stroke:url(#flowGradient);
+
+    stroke-width:14;
+
+    opacity:.25;
+
+    filter:url(#glow);
+
+}
+
+
+
+
+.energy-line{
+
+
+    fill:none;
+
+    stroke:url(#flowGradient);
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:20 30;
+
+    animation:
+    energyMove 2s linear infinite;
+
+}
+
+
+
+@keyframes energyMove{
+
+
+    from{
+
+        stroke-dashoffset:0;
+
+    }
+
+
+    to{
+
+        stroke-dashoffset:-100;
+
+    }
+
+
+}
+
+
+
+
+
+
+/* =====================
+HAIYAM CORE
+===================== */
+
+
+.haiyam-core{
+
+
+    width:300px;
+
+    margin:0 auto 80px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    background:white;
+
+    position:relative;
+
+}
+
+
+.haiyam-core::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:34px;
+
+
+    background:linear-gradient(
+        135deg,
+        #EC4899,
+        #8B5CF6,
+        #3B82F6
+    );
+
+
+    z-index:-1;
+
+
+}
+
+
+.haiyam-core h3{
+
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.haiyam-core p{
+
+    line-height:1.8;
+
+    opacity:.75;
+
+}
+
+
+
+
+
+
+
+/* =====================
+PROCESS
+===================== */
+
+
+.haiyam-process{
+
+
+    position:relative;
+
+    max-width:700px;
+
+    margin:auto;
+
+
+}
+
+
+
+.process-line{
+
+
+    position:absolute;
+
+    left:24px;
+
+    top:20px;
+
+    bottom:20px;
+
+    width:2px;
+
+
+    background:linear-gradient(
+        to bottom,
+        #EC4899,
+        #8B5CF6,
+        #3B82F6
+    );
+
+    opacity:.25;
+
+
+}
+
+
+
+.process-step{
+
+
+    position:relative;
+
+    padding-left:75px;
+
+    margin-bottom:55px;
+
+
+}
+
+
+
+
+.step-dot{
+
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+
+    width:50px;
+
+    height:50px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    background:white;
+
+
+    border:2px solid #8B5CF6;
+
+
+    color:#8B5CF6;
+
+
+    font-weight:700;
+
+
+    transition:.4s ease;
+
+
+}
+
+
+
+.process-step:hover .step-dot{
+
+
+    background:#8B5CF6;
+
+    color:white;
+
+
+}
+
+
+
+.process-step h4{
+
+    margin-bottom:8px;
+
+    font-size:22px;
+
+}
+
+
+.process-step p{
+
+    opacity:.65;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* =====================
+RESULT
+===================== */
+
+
+.haiyam-result{
+
+
+    margin:60px auto 0;
+
+    max-width:500px;
+
+
+    text-align:center;
+
+
+    padding:45px 30px;
+
+
+    border-radius:30px;
+
+
+    background:white;
+
+
+    border:1px solid rgba(0,0,0,.08);
+
+
+}
+
+
+.result-icon{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+
+.haiyam-result h3{
+
+    font-size:28px;
+
+}
+
+
+
+
+
+
+
+/* =====================
+MOBILE
+===================== */
+
+
+@media(max-width:768px){
+
+
+    .haiyam-flow__header{
+
+        margin-bottom:45px;
+
+    }
+
+
+
+    .haiyam-flow__header p{
+
+        font-size:16px;
+
+    }
+
+
+
+    .haiyam-flow__inputs{
+
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+
+
+    .flow-card{
+
+
+        padding:28px;
+
+        border-radius:24px;
+
+    }
+
+
+
+
+    .flow-connector{
+
+
+        height:100px;
+
+    }
+
+
+
+    .flow-connector svg{
+
+
+        width:320px;
+
+    }
+
+
+
+    .haiyam-core{
+
+
+        width:calc(100% - 40px);
+
+        padding:35px 25px;
+
+        margin-bottom:60px;
+
+    }
+
+
+
+
+    .haiyam-core h3{
+
+        font-size:36px;
+
+    }
+
+
+
+
+    .haiyam-process{
+
+        padding-left:5px;
+
+    }
+
+
+
+
+    .process-line{
+
+        left:20px;
+
+    }
+
+
+
+
+    .process-step{
+
+
+        padding-left:65px;
+
+        margin-bottom:45px;
+
+    }
+
+
+
+
+    .step-dot{
+
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+
+
+
+    .process-step h4{
+
+        font-size:20px;
+
+    }
+
+
+
+
+    .haiyam-result{
+
+
+        padding:35px 20px;
+
+    }
+
+
+
+    .haiyam-result h3{
+
+        font-size:24px;
+
+    }
+
+
+}
+      
   </style>
 <body>
 
@@ -2175,7 +2826,7 @@ Build sustainable expansion through optimization and partnerships.
 
         
          <h2>
-    A Strong Foundation for Expansion
+    A strong foundation for expansion
 </h2>
 
         <p>
@@ -2226,7 +2877,7 @@ Economic resilience and innovation support sustainable market growth
 <div class="title-bubble"></div>
 
 <h2>
-Building One Brand at a Time
+Building one brand at a time
 </h2>
 
 </div>
@@ -2293,7 +2944,7 @@ Scale through optimization and new opportunities.
 <div class="title-bubble"></div>
 
 <h2>
-Who We Work With
+Who we work with
 </h2>
 
 <p>
@@ -2320,7 +2971,300 @@ Ambitious international brands looking to establish a meaningful presence in Isr
 </section>
 
 
+<!-- =====================
+HAIYAM WORKFLOW
+===================== -->
 
+<section class="haiyam-flow section">
+
+<div class="container">
+
+
+    <div class="haiyam-flow__header reveal">
+
+        <h2>
+            From the vision
+            <span>to the growth</span>
+        </h2>
+
+        <p>
+            Haiyam combines local execution with strategic capital
+            to help global companies build and scale in Israel.
+        </p>
+
+    </div>
+
+
+
+    <!-- TOP INPUTS -->
+
+    <div class="haiyam-flow__inputs reveal">
+
+
+        <div class="flow-card">
+
+            <div class="flow-icon">
+                🌍
+            </div>
+
+            <h3>
+                Foreign Brand
+            </h3>
+
+            <p>
+                International company seeking
+                market entry and local growth.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-card">
+
+            <div class="flow-icon">
+                💎
+            </div>
+
+            <h3>
+                Haiyam Investor Capital
+            </h3>
+
+            <p>
+                Strategic investors providing
+                resources and growth opportunities.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ENERGY CONNECTION -->
+
+    <div class="flow-connector">
+
+        <svg viewBox="0 0 600 180">
+
+            <defs>
+
+                <linearGradient id="flowGradient">
+
+                    <stop offset="0%" stop-color="#EC4899"/>
+                    <stop offset="50%" stop-color="#8B5CF6"/>
+                    <stop offset="100%" stop-color="#3B82F6"/>
+
+                </linearGradient>
+
+
+                <filter id="glow">
+
+                    <feGaussianBlur
+                    stdDeviation="4"
+                    result="coloredBlur"/>
+
+                </filter>
+
+            </defs>
+
+
+
+            <!-- glow line -->
+
+            <path
+            class="energy-glow"
+            d="M100 10 L300 160 L500 10"
+            />
+
+
+
+            <!-- moving pulse -->
+
+            <path
+            class="energy-line"
+            d="M100 10 L300 160 L500 10"
+            />
+
+        </svg>
+
+
+    </div>
+
+
+
+
+
+    <!-- HAIYAM CENTER -->
+
+    <div class="haiyam-core reveal">
+
+
+        <h3>
+            HAIYAM
+        </h3>
+
+
+        <p>
+            Local Strategy<br>
+            Market Entry<br>
+            Business Execution
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- PROCESS -->
+
+    <div class="haiyam-process">
+
+
+        <div class="process-line"></div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Local Strategy
+            </h4>
+
+            <p>
+                Building the right market approach.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Market Validation
+            </h4>
+
+            <p>
+                Understanding opportunities and challenges.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Company Setup
+            </h4>
+
+            <p>
+                Establishing the local foundation.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Operations & Team
+            </h4>
+
+            <p>
+                Building local capabilities.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Partnerships & Sales
+            </h4>
+
+            <p>
+                Creating market traction.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step reveal">
+
+            <div class="step-dot">
+                ✓
+            </div>
+
+            <h4>
+                Scale & Growth
+            </h4>
+
+            <p>
+                Expanding long-term success.
+            </p>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- RESULT -->
+
+    <div class="haiyam-result reveal">
+
+        <div class="result-icon">
+            📈
+        </div>
+
+
+        <h3>
+            Sustainable Growth in Israel
+        </h3>
+
+
+    </div>
+
+
+
+</div>
+
+</section>
+    
 
 
 <!-- FOUNDERS -->
@@ -2332,7 +3276,7 @@ Ambitious international brands looking to establish a meaningful presence in Isr
 <div class="section-title tm-founders__title">
 
     <h2>
-        The People Behind Haiyam
+        The people behind Haiyam
     </h2>
 
     <p>
@@ -3009,6 +3953,165 @@ answerButtons.forEach(button=>{
         }
 
     });
+
+});
+
+    /* =====================
+HAIYAM WORKFLOW ANIMATION
+===================== */
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+    const flowSection = document.querySelector(".haiyam-flow");
+
+
+    if(!flowSection) return;
+
+
+
+    const steps = document.querySelectorAll(
+        ".haiyam-flow .process-step"
+    );
+
+
+    const connector = document.querySelector(
+        ".haiyam-flow .flow-connector"
+    );
+
+
+    const core = document.querySelector(
+        ".haiyam-flow .haiyam-core"
+    );
+
+
+    const result = document.querySelector(
+        ".haiyam-flow .haiyam-result"
+    );
+
+
+
+    let started = false;
+
+
+
+
+    const observer = new IntersectionObserver(
+    (entries)=>{
+
+
+        entries.forEach(entry=>{
+
+
+            if(entry.isIntersecting && !started){
+
+
+                started = true;
+
+
+                startWorkflow();
+
+
+            }
+
+
+        });
+
+
+    },
+    {
+        threshold:.25
+    });
+
+
+
+    observer.observe(flowSection);
+
+
+
+
+
+
+    function startWorkflow(){
+
+
+        // activate energy cable
+
+        if(connector){
+
+            connector.classList.add("active");
+
+        }
+
+
+
+
+
+        // highlight Haiyam
+
+        setTimeout(()=>{
+
+
+            if(core){
+
+                core.classList.add("active");
+
+            }
+
+
+        },800);
+
+
+
+
+
+
+
+        // activate timeline steps
+
+
+        steps.forEach((step,index)=>{
+
+
+            setTimeout(()=>{
+
+
+                step.classList.add("active");
+
+
+            },1400 + (index * 500));
+
+
+
+        });
+
+
+
+
+
+
+
+        // final result
+
+
+        setTimeout(()=>{
+
+
+            if(result){
+
+                result.classList.add("active");
+
+            }
+
+
+        },1400 + (steps.length * 500));
+
+
+
+    }
+
+
 
 });
     
