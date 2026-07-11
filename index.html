@@ -2771,6 +2771,81 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(stats);
 
 });
+
+    // =====================
+// WIZARD
+// =====================
+
+const wizard = document.getElementById("wizard");
+const openBtn = document.getElementById("openWizard");
+const closeBtn = document.querySelector(".wizard-close");
+
+const steps = document.querySelectorAll(".wizard-step");
+const dots = document.querySelectorAll(".wizard-progress span");
+const answerButtons = document.querySelectorAll(".answers button");
+
+let currentStep = 0;
+
+function showStep(index){
+
+    steps.forEach(step => step.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    steps[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    currentStep = index;
+
+}
+
+openBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    wizard.classList.add("active");
+
+    showStep(0);
+
+});
+
+closeBtn.addEventListener("click", function(){
+
+    wizard.classList.remove("active");
+
+});
+
+wizard.addEventListener("click", function(e){
+
+    if(e.target === wizard){
+
+        wizard.classList.remove("active");
+
+    }
+
+});
+
+
+answerButtons.forEach(button=>{
+
+    button.addEventListener("click",function(){
+
+        // save answer
+        const question = steps[currentStep].querySelector("h3").textContent;
+        const answer = this.textContent;
+
+        console.log(question, answer);
+
+        // next step
+        if(currentStep < steps.length - 1){
+
+            showStep(currentStep + 1);
+
+        }
+
+    });
+
+});
+    
     
   </script>
 
