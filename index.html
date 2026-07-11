@@ -3319,29 +3319,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-    // =====================
+// =====================
 // WIZARD
 // =====================
 
+
 const wizard = document.getElementById("wizard");
+
 const openBtn = document.getElementById("openWizard");
+
 const closeBtn = document.querySelector(".wizard-close");
 
+
+const steps = document.querySelectorAll(".wizard-step");
+
+const answerButtons = document.querySelectorAll(".answers button");
+
+
 const progressFill = document.getElementById("wizardProgressFill");
+
 const currentStepText = document.getElementById("wizardCurrentStep");
+
+
+let currentStep = 0;
+
+
+
 
 
 function showStep(index){
 
+
     steps.forEach(step=>{
+
         step.classList.remove("active");
+
     });
+
 
 
     steps[index].classList.add("active");
 
 
+
     let progress = ((index + 1) / steps.length) * 100;
+
 
 
     if(progressFill){
@@ -3351,6 +3373,7 @@ function showStep(index){
     }
 
 
+
     if(currentStepText){
 
         currentStepText.textContent = index + 1;
@@ -3358,29 +3381,135 @@ function showStep(index){
     }
 
 
-    currentStep=index;
+
+    currentStep = index;
+
 
 }
 
 
+
+
+
+
+
+// OPEN
+
+
+openBtn.addEventListener("click", function(e){
+
+
+    e.preventDefault();
+
+
+    wizard.classList.add("active");
+
+
+    showStep(0);
+
+
+});
+
+
+
+
+
+
+
+// CLOSE
+
+
+closeBtn.addEventListener("click", function(){
+
+
+    wizard.classList.remove("active");
+
+
+});
+
+
+
+
+
+
+// CLICK OUTSIDE TO CLOSE
+
+
+wizard.addEventListener("click",function(e){
+
+
+    if(e.target === wizard){
+
+        wizard.classList.remove("active");
+
+    }
+
+
+});
+
+
+
+
+
+
+
+// ANSWERS AUTO NEXT
+
+
 answerButtons.forEach(button=>{
+
 
     button.addEventListener("click",function(){
 
-        // save answer
-        const question = steps[currentStep].querySelector("h3").textContent;
+
+        const question =
+        steps[currentStep]
+        .querySelector("h3")
+        .textContent;
+
+
+
         const answer = this.textContent;
 
-        console.log(question, answer);
 
-        // next step
-        if(currentStep < steps.length - 1){
 
-            showStep(currentStep + 1);
+        console.log({
 
-        }
+            question:question,
+
+            answer:answer
+
+        });
+
+
+
+
+        // small selected effect
+
+
+        this.classList.add("selected");
+
+
+
+
+        setTimeout(()=>{
+
+
+            if(currentStep < steps.length - 1){
+
+
+                showStep(currentStep + 1);
+
+
+            }
+
+
+        },250);
+
+
 
     });
+
 
 });
 
