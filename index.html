@@ -1284,6 +1284,51 @@ CTA
 
 }
 
+      /* =====================
+CTA IMAGE
+===================== */
+
+.cta{
+
+    position:relative;
+    overflow:hidden;
+
+    min-height:420px;
+
+}
+
+
+.cta-content{
+
+    position:relative;
+    z-index:2;
+
+}
+
+
+/* bottom image */
+
+.cta-image{
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:70%;
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+    z-index:1;
+
+    pointer-events:none;
+
+}
+      
+
 /* =====================
 FOOTER
 ===================== */
@@ -2118,6 +2163,12 @@ Let's Talk →
 
 
 </div>
+
+    <img 
+    class="cta-image" 
+    src="YOUR-IMAGE.jpg" 
+    alt=""
+    >
 
 </div>
 
