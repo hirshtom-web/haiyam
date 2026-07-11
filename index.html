@@ -1594,13 +1594,19 @@ HAIYAM WIZARD
 /* PROGRESS */
 
 
+/* =====================
+WIZARD PROGRESS BAR
+===================== */
+
+
+.wizard{
+
+    font-family:"Inter", sans-serif;
+
+}
+
+
 .wizard-progress{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
 
     margin-bottom:40px;
 
@@ -1608,39 +1614,89 @@ HAIYAM WIZARD
 
 
 
-.wizard-progress span{
+.wizard-progress-bar{
 
-    width:12px;
+    width:100%;
 
-    height:12px;
+    height:5px;
 
-    border-radius:50%;
+    background:#eee;
 
-    background:#e5e5e5;
+    border-radius:20px;
 
-    transition:.5s ease;
+    overflow:hidden;
 
 }
 
 
 
+#wizardProgressFill{
 
-.wizard-progress span.active{
+    display:block;
+
+    height:100%;
+
+    width:25%;
+
 
     background:
     linear-gradient(
-        135deg,
+        90deg,
         #EC4899,
-        #8B5CF6
+        #C026D3,
+        #8B5CF6,
+        #3B82F6
     );
 
-    transform:scale(1.25);
 
-    box-shadow:
-    0 0 15px rgba(139,92,246,.45);
+    background-size:300% 100%;
+
+    border-radius:20px;
+
+
+    transition:
+    width .5s ease;
+
+
+    animation:
+    progressGlow 5s linear infinite;
 
 }
 
+
+
+@keyframes progressGlow{
+
+
+    from{
+
+        background-position:0%;
+
+    }
+
+
+    to{
+
+        background-position:300%;
+
+    }
+
+}
+
+
+
+
+.wizard-progress-text{
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    color:#777;
+
+    text-align:right;
+
+}
 
 
 
@@ -2759,12 +2815,19 @@ Haiyam provides the local expertise and execution to help your brand succeed.
     <img src="https://static.wixstatic.com/shapes/1799ca_b7aa4f68c54e4a5faf0deede2e385ee2.svg" alt="Haiyam">
 </div>
 
-        <div class="wizard-progress">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+<div class="wizard-progress">
+
+    <div class="wizard-progress-bar">
+
+        <span id="wizardProgressFill"></span>
+
+    </div>
+
+    <div class="wizard-progress-text">
+        Step <span id="wizardCurrentStep">1</span> of 4
+    </div>
+
+</div>
 
 
         <div class="wizard-step active">
@@ -2822,11 +2885,23 @@ Haiyam provides the local expertise and execution to help your brand succeed.
 
             <div class="phone">
 
-                <select>
-                    <option>+972</option>
-                    <option>+1</option>
-                    <option>+44</option>
-                </select>
+               <select>
+
+<option>🇮🇱</option>
+
+<option>🇺🇸 +1</option>
+
+<option>🇬🇧 +44</option>
+
+<option>🇨🇦 +1</option>
+
+<option>🇦🇺 +61</option>
+
+<option>🇩🇪 +49</option>
+
+<option>🇫🇷 +33</option>
+
+</select>
 
                 <input placeholder="Phone number">
 
@@ -3252,49 +3327,40 @@ const wizard = document.getElementById("wizard");
 const openBtn = document.getElementById("openWizard");
 const closeBtn = document.querySelector(".wizard-close");
 
-const steps = document.querySelectorAll(".wizard-step");
-const dots = document.querySelectorAll(".wizard-progress span");
-const answerButtons = document.querySelectorAll(".answers button");
+const progressFill = document.getElementById("wizardProgressFill");
+const currentStepText = document.getElementById("wizardCurrentStep");
 
-let currentStep = 0;
 
 function showStep(index){
 
-    steps.forEach(step => step.classList.remove("active"));
-    dots.forEach(dot => dot.classList.remove("active"));
+    steps.forEach(step=>{
+        step.classList.remove("active");
+    });
+
 
     steps[index].classList.add("active");
-    dots[index].classList.add("active");
 
-    currentStep = index;
 
-}
+    let progress = ((index + 1) / steps.length) * 100;
 
-openBtn.addEventListener("click", function(e){
 
-    e.preventDefault();
+    if(progressFill){
 
-    wizard.classList.add("active");
-
-    showStep(0);
-
-});
-
-closeBtn.addEventListener("click", function(){
-
-    wizard.classList.remove("active");
-
-});
-
-wizard.addEventListener("click", function(e){
-
-    if(e.target === wizard){
-
-        wizard.classList.remove("active");
+        progressFill.style.width = progress + "%";
 
     }
 
-});
+
+    if(currentStepText){
+
+        currentStepText.textContent = index + 1;
+
+    }
+
+
+    currentStep=index;
+
+}
 
 
 answerButtons.forEach(button=>{
