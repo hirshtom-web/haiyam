@@ -1284,50 +1284,171 @@ CTA
 
 }
 
-      /* =====================
-CTA IMAGE
-===================== */
+.wizard-overlay{
 
-.cta{
+    position:fixed;
+    inset:0;
 
-    position:relative;
-    overflow:hidden;
+    background:rgba(0,0,0,.45);
 
-    min-height:420px;
+    display:none;
+    align-items:center;
+    justify-content:center;
 
-}
+    z-index:9999;
 
-
-.cta-content{
-
-    position:relative;
-    z-index:2;
+    padding:20px;
 
 }
 
 
-/* bottom image */
+.wizard-overlay.active{
 
-.cta-image{
+    display:flex;
+
+}
+
+
+.wizard{
+
+    width:100%;
+    max-width:480px;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    position:relative;
+
+}
+
+
+.wizard-close{
 
     position:absolute;
 
-    bottom:0;
-    left:0;
+    top:15px;
+    right:20px;
 
-    width:70%;
-    height:auto;
+    border:0;
+    background:none;
+
+    font-size:28px;
+
+}
+
+
+.wizard-progress{
+
+    display:flex;
+    justify-content:center;
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+
+.wizard-progress span{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#ddd;
+
+}
+
+
+.wizard-progress span.active{
+
+    background:#8B5CF6;
+
+}
+
+
+.wizard-step{
+
+    display:none;
+
+}
+
+
+.wizard-step.active{
 
     display:block;
 
-    object-fit:contain;
+}
 
-    z-index:1;
 
-    pointer-events:none;
+.answers{
+
+    display:grid;
+    gap:12px;
 
 }
-      
+
+
+.answers button{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    cursor:pointer;
+
+}
+
+
+.wizard input,
+.wizard select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+}
+
+
+.phone{
+
+    display:flex;
+    gap:10px;
+
+}
+
+
+.phone select{
+
+    width:90px;
+
+}
+
+
+@media(max-width:600px){
+
+    .wizard{
+
+        padding:25px;
+
+        border-radius:22px;
+
+    }
+
+}  
 
 /* =====================
 FOOTER
@@ -2141,44 +2262,124 @@ Ambitious international brands looking to establish a meaningful presence in Isr
 
 <!-- CTA -->
 
-<!-- CTA -->
-
 <section id="contact" class="section">
 
 <div class="container">
 
 <div class="cta reveal">
 
-    <div class="cta-content">
+<h2>
+Let's Build Your Business in Israel
+</h2>
 
-        <h2>
-        Let's Build Your Business in Israel
-        </h2>
+<p>
+Whether you are exploring the market or preparing for launch,
+Haiyam provides the local expertise and execution to help your brand succeed.
+</p>
 
-        <p>
-        Whether you are exploring the market or preparing for launch,
-        Haiyam provides the local expertise and execution to help your brand succeed.
-        </p>
-
-
-        <a href="mailto:hello@haiyam.com" class="button primary">
-        Let's Talk →
-        </a>
-
-    </div>
-
-
-    <img 
-    class="cta-image" 
-    src="YOUR-IMAGE.jpg" 
-    alt=""
-    >
+<a href="#" class="button primary" id="openWizard">
+    Let's Talk →
+</a>
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- WIZARD POPUP -->
+
+<div class="wizard-overlay" id="wizard">
+
+    <div class="wizard">
+
+        <button class="wizard-close">×</button>
+
+        <div class="wizard-progress">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <div class="wizard-step active">
+
+            <h3>What brings you to Israel?</h3>
+
+            <div class="answers">
+                <button>Market research</button>
+                <button>Launching a business</button>
+                <button>Finding partners</button>
+                <button>Expanding operations</button>
+            </div>
+
+        </div>
+
+
+        <div class="wizard-step">
+
+            <h3>What stage are you in?</h3>
+
+            <div class="answers">
+                <button>Early idea</button>
+                <button>Planning entry</button>
+                <button>Already operating</button>
+                <button>Scaling growth</button>
+            </div>
+
+        </div>
+
+
+        <div class="wizard-step">
+
+            <h3>What support do you need?</h3>
+
+            <div class="answers">
+                <button>Strategy</button>
+                <button>Local connections</button>
+                <button>Operations</button>
+                <button>Full market entry</button>
+            </div>
+
+        </div>
+
+
+        <div class="wizard-step">
+
+            <h3>Tell us about yourself</h3>
+
+            <input placeholder="Name">
+
+            <input placeholder="Company">
+
+            <input placeholder="Email">
+
+
+            <div class="phone">
+
+                <select>
+                    <option>+972</option>
+                    <option>+1</option>
+                    <option>+44</option>
+                </select>
+
+                <input placeholder="Phone number">
+
+            </div>
+
+
+            <button class="button primary">
+                Submit
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
 
 
 
