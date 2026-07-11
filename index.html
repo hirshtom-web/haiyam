@@ -188,48 +188,81 @@ BACKGROUND BLOBS
 HEADER
 ===================== */
 
-.header {
+.header{
 
     position:fixed;
     top:0;
     width:100%;
     z-index:100;
     padding:25px 0;
+
+    transition:transform .35s ease,padding .35s ease;
+    will-change:transform;
+
 }
 
-.navbar {
+.header.header-hidden{
+
+    transform:translateY(-100%);
+
+}
+
+
+/* NAVBAR */
+
+.navbar{
 
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     background:rgba(255,255,255,.55);
     backdrop-filter:blur(20px);
+
     border:1px solid var(--border);
+
     border-radius:50px;
+
     padding:14px 24px;
+
 }
 
-.logo {
+
+/* LOGO */
+
+.logo{
 
     font-size:26px;
     font-weight:700;
     font-family:"Space Grotesk";
+
 }
 
-.logo-img {
-    height: 45px;
-    width: auto;
-    display: block;
-    position: relative;
-    top: 5px;
+.logo-img{
+
+    height:45px;
+    width:auto;
+
+    display:block;
+
+    position:relative;
+    top:5px;
+
 }
 
-.nav-links {
+
+/* NAV */
+
+.nav-links{
 
     display:flex;
     align-items:center;
     gap:30px;
+
 }
+
+
+/* MENU ITEMS */
 
 .nav-links a{
 
@@ -238,60 +271,64 @@ HEADER
     font-size:15px;
     color:#333;
 
-    text-decoration:none;
-
     transition:color .3s ease;
 
 }
 
 
-.nav-links a::after{
+/* underline */
+
+.nav-links a:not(.nav-button)::after{
 
     content:"";
 
     position:absolute;
 
     left:0;
-    bottom:-8px;
+    bottom:-7px;
 
     width:100%;
     height:2px;
 
-    background:linear-gradient(
-        90deg,
-        #EC4899,
-        #C026D3,
-        #8B5CF6
-    );
+    background:#333;
 
     transform:scaleX(0);
     transform-origin:left;
 
-    transition:transform .35s ease;
+    transition:transform .55s ease;
 
 }
 
 
-.nav-links a:hover{
+.nav-links a:not(.nav-button):hover{
 
-    color:#111;
+    color:#333;
 
 }
 
 
-.nav-links a:hover::after{
+.nav-links a:not(.nav-button):hover::after{
 
     transform:scaleX(1);
 
 }
 
+
+/* CTA BUTTON */
+
 .nav-button{
 
     position:relative;
 
-    padding:2px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    border-radius:999px;
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    color:#fff!important;
 
     background:linear-gradient(
         90deg,
@@ -304,12 +341,18 @@ HEADER
 
     background-size:300% 100%;
 
-    animation:buttonBorder 6s linear infinite;
+    animation:buttonStroke 6s linear infinite;
 
-    color:white!important;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 
 }
-      .nav-button::before{
+
+
+/* dark center */
+
+.nav-button::before{
 
     content:"";
 
@@ -319,12 +362,14 @@ HEADER
 
     background:#111;
 
-    border-radius:999px;
+    border-radius:48px;
 
     z-index:0;
 
 }
 
+
+/* keep text above */
 
 .nav-button span{
 
@@ -333,41 +378,63 @@ HEADER
 
 }
 
-.mobile-toggle {
+
+/* remove underline */
+
+.nav-button::after{
+
+    display:none!important;
+
+}
+
+
+/* hover */
+
+.nav-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(139,92,246,.25);
+
+}
+
+
+/* MOBILE */
+
+.mobile-toggle{
 
     display:none;
     border:0;
     background:none;
+
 }
 
-.mobile-toggle span {
+.mobile-toggle span{
 
     display:block;
+
     width:26px;
     height:2px;
+
     background:#111;
+
     margin:6px;
-}
 
-      .header {
-    transition: transform .35s ease, padding .35s ease;
-    will-change: transform;
-}
-
-.header.header-hidden {
-    transform: translateY(-100%);
 }
 
 
-@keyframes buttonBorder{
+/* ANIMATION */
 
-    0%{
+@keyframes buttonStroke{
+
+    from{
 
         background-position:0%;
 
     }
 
-    100%{
+    to{
 
         background-position:300%;
 
