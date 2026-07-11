@@ -267,6 +267,15 @@ HEADER
     margin:6px;
 }
 
+      .header {
+    transition: transform .35s ease, padding .35s ease;
+    will-change: transform;
+}
+
+.header.header-hidden {
+    transform: translateY(-100%);
+}
+
 
 
 
@@ -2210,25 +2219,45 @@ Let's Talk →
     NAVBAR EFFECT
     ===================== */
 
-    const header = document.querySelector(".header");
+const header = document.querySelector(".header");
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.scrollY;
 
 
-    window.addEventListener("scroll", () => {
+    // Shrink header
+    if(currentScroll > 40){
+
+        header.style.padding = "12px 0";
+
+    } else {
+
+        header.style.padding = "25px 0";
+
+    }
 
 
-        if(window.scrollY > 40){
+    // Hide when scrolling down
+    if(currentScroll > lastScroll && currentScroll > 100){
 
-            header.style.padding = "12px 0";
+        header.classList.add("header-hidden");
 
-        } else {
+    }
 
-            header.style.padding = "25px 0";
+    // Show when scrolling up
+    else {
 
-        }
+        header.classList.remove("header-hidden");
+
+    }
 
 
-    });
+    lastScroll = currentScroll;
 
+});
 
 
 
