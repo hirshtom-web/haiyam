@@ -398,7 +398,44 @@
     }
 }
 
+.tm-check{
+    width:22px;
+    height:22px;
+    min-width:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#ddd6fe;
+    overflow:hidden;
+}
 
+.tm-check .material-symbols-rounded{
+    font-size:14px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 20;
+    color:#fff;
+    opacity:0;
+}
+
+.tm-check.done .material-symbols-rounded{
+    animation:showCheck .25s forwards;
+    animation-delay:inherit;
+}
+
+@keyframes showCheck{
+    from{
+        opacity:0;
+        transform:scale(.6);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
 
 
 
