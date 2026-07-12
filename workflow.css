@@ -436,6 +436,10 @@
 
     height:22px;
 
+    min-width:22px;
+
+    flex-shrink:0;
+
     border-radius:50%;
 
     background:#8b5cf6;
