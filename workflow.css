@@ -482,15 +482,19 @@
 
 .tm-workflow-main__steps{
     margin-top:40px;
-    height:58px;
+    height:204px;
     overflow:hidden;
     position:relative;
+    display:block;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%);
 }
 
 .tm-workflow-main__slider{
     display:flex;
     flex-direction:column;
-    animation:workflowSlider 9s linear infinite;
+    gap:15px;
+    animation:workflowSlider 10s linear infinite;
 }
 
 .tm-workflow-main__slider div{
@@ -516,17 +520,18 @@
 }
 
 @keyframes workflowSlider{
-    0%,25%{
+    0%,22%{
         transform:translateY(0);
     }
-    33%,58%{
-        transform:translateY(-58px);
+    30%,52%{
+        transform:translateY(-73px);
     }
-    66%,91%{
-        transform:translateY(-116px);
+    60%,82%{
+        transform:translateY(-146px);
     }
     100%{
-        transform:translateY(-174px);
+        transform:translateY(-219px);
+    
     }
 }
 
