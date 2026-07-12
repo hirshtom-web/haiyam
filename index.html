@@ -1289,7 +1289,7 @@ CTA
 
     border-radius:50px;
 
-    color:#111!important;
+    color:#fff!important;
 
     background:linear-gradient(
         90deg,
@@ -1308,12 +1308,10 @@ CTA
         transform .3s ease,
         box-shadow .3s ease;
 
-    overflow:hidden;
-
 }
 
 
-/* white center */
+/* transparent center */
 
 .cta .button::before{
 
@@ -1323,7 +1321,7 @@ CTA
 
     inset:2px;
 
-    background:#fff;
+    background:transparent;
 
     border-radius:48px;
 
@@ -1332,12 +1330,22 @@ CTA
 }
 
 
-/* text above */
+/* keep text above */
 
 .cta .button span{
 
     position:relative;
+
     z-index:1;
+
+}
+
+
+/* remove underline */
+
+.cta .button::after{
+
+    display:none!important;
 
 }
 
@@ -1349,9 +1357,10 @@ CTA
     transform:translateY(-2px);
 
     box-shadow:
-        0 8px 24px rgba(139,92,246,.25);
+        0 8px 24px rgba(139,92,6,0.25);
 
 }
+      
 
 /* =====================
 HAIYAM WIZARD
