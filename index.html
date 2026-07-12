@@ -1280,9 +1280,76 @@ CTA
 .cta .button {
 
     position:relative;
-    display:inline-block;
-    background:white;
-    color:#111;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    color:#111!important;
+
+    background:linear-gradient(
+        90deg,
+        #EC4899,
+        #8B5CF6,
+        #3B82F6,
+        #06B6D4,
+        #EC4899
+    );
+
+    background-size:300% 100%;
+
+    animation:buttonStroke 6s linear infinite;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    overflow:hidden;
+
+}
+
+
+/* white center */
+
+.cta .button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:2px;
+
+    background:#fff;
+
+    border-radius:48px;
+
+    z-index:0;
+
+}
+
+
+/* text above */
+
+.cta .button span{
+
+    position:relative;
+    z-index:1;
+
+}
+
+
+/* hover */
+
+.cta .button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(139,92,246,.25);
 
 }
 
