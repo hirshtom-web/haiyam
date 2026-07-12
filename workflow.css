@@ -588,7 +588,9 @@ ANIMATIONS
 
     position:relative;
 
-    height:430px;
+    height:560px;
+
+    overflow:visible;
 
 }
 
