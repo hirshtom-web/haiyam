@@ -217,301 +217,186 @@
 02. LEFT WORKFLOW
 ========================================= */
 
-
-/* LEFT STAGE */
-
-.tm-workflow__stage--left {
-
+.tm-workflow__stage--left{
     position:relative;
-
     height:560px;
-
     overflow:visible;
-
 }
-
-
 
 /* LAPTOP */
 
-.tm-device--laptop {
-
+.tm-device--laptop{
     position:absolute;
-
     left:clamp(-260px,-15vw,-120px);
-
     top:clamp(-20px,2vw,40px);
-
     width:clamp(420px,42vw,720px);
-
     height:clamp(300px,28vw,480px);
-
     padding:clamp(25px,3vw,45px);
-
     background:rgba(255,255,255,.75);
-
     backdrop-filter:blur(20px);
-
     -webkit-backdrop-filter:blur(20px);
-
     border:1px solid rgba(255,255,255,.8);
-
     border-radius:32px;
-
-    box-shadow:
-
-        0 50px 120px rgba(88,28,135,.18);
-
+    box-shadow:0 50px 120px rgba(88,28,135,.18);
     z-index:1;
-
 }
-
-
 
 /* LAPTOP HEADER */
 
-.tm-device__top {
-
+.tm-device__top{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
 }
 
-
-.tm-device__top span {
-
+.tm-device__top span{
     width:80px;
-
     height:8px;
-
     background:#ddd6fe;
-
     border-radius:10px;
-
 }
 
-
-.tm-avatar {
-
+.tm-avatar{
     width:30px;
-
     height:30px;
-
     border-radius:50%;
-
     background:#a855f7;
-
 }
-
-
 
 /* LAPTOP CONTENT */
 
-.tm-placeholder {
-
+.tm-placeholder{
     height:16px;
-
     background:#e9d5ff;
-
     margin-top:25px;
-
     border-radius:8px;
-
 }
 
-
-.tm-placeholder--large {
-
+.tm-placeholder--large{
     width:80%;
-
     height:70px;
-
     background:#ddd6fe;
-
 }
 
-
-.tm-placeholder--short {
-
+.tm-placeholder--short{
     width:45%;
-
 }
 
-
-
-.tm-device__grid {
-
+.tm-device__grid{
     display:flex;
-
     gap:15px;
-
     margin-top:30px;
-
 }
 
-
-.tm-device__grid div {
-
+.tm-device__grid div{
     flex:1;
-
     height:45px;
-
     background:#f3e8ff;
-
     border-radius:10px;
-
 }
-
-
 
 /* PHONE */
 
-.tm-device--phone {
-
+.tm-device--phone{
     position:absolute;
-
     right:-20px;
-
     top:150px;
-
-    width:230px; /* was 190px */
-
+    width:230px;
     height:330px;
-
     padding:25px;
-
     background:rgba(255,255,255,.78);
-
     backdrop-filter:blur(20px);
-
     -webkit-backdrop-filter:blur(20px);
-
     border-radius:32px;
-
     border:1px solid rgba(255,255,255,.8);
-
-    box-shadow:
-
-        0 35px 80px rgba(88,28,135,.25);
-
+    box-shadow:0 35px 80px rgba(88,28,135,.25);
     z-index:2;
-
 }
-
-
 
 /* PHONE CONTENT */
 
-.tm-phone__header {
-
+.tm-phone__header{
     font-weight:600;
-
     margin-bottom:30px;
-
 }
 
-
-
-.tm-check-row {
-
+.tm-check-row{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
-    margin-bottom:12px; /* was 20px */
-
+    margin-bottom:12px;
     font-size:14px;
-
     line-height:1.35;
-
-}
-
-.tm-check-row {
-
     max-width:230px;
-
 }
 
-
-.tm-check {
-
+.tm-check{
     width:22px;
-
     height:22px;
-
     min-width:22px;
-
     flex-shrink:0;
-
-    border-radius:50%;
-
-    background:#8b5cf6;
-
-    color:white;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
+    border-radius:50%;
+    background:#ddd6fe;
+    color:transparent;
     font-size:12px;
-
 }
 
+/* COMPLETED */
 
+.tm-check.done{
+    animation:checkDone .45s forwards;
+}
 
 /* LOADING */
 
-.tm-check.loading {
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            #ddd6fe,
-
-            #8b5cf6,
-
-            #ddd6fe
-
-        );
-
+.tm-check.loading{
+    background:linear-gradient(90deg,#ddd6fe,#8b5cf6,#ddd6fe);
     background-size:200%;
-
-    animation:
-
-        workflowLoading 1.5s infinite;
-
+    color:transparent;
+    animation:workflowLoading 1.5s linear infinite;
 }
 
+/* SEQUENCE */
 
+.tm-workflow.is-visible .tm-check-row:nth-child(2) .tm-check.done{
+    animation-delay:.3s;
+}
 
-@keyframes workflowLoading {
+.tm-workflow.is-visible .tm-check-row:nth-child(3) .tm-check.done{
+    animation-delay:.8s;
+}
 
-    from {
+.tm-workflow.is-visible .tm-check-row:nth-child(4) .tm-check.done{
+    animation-delay:1.3s;
+}
 
+@keyframes checkDone{
+    0%{
+        background:#ddd6fe;
+        color:transparent;
+        transform:scale(.7);
+    }
+    60%{
+        transform:scale(1.15);
+    }
+    100%{
+        background:#8b5cf6;
+        color:#fff;
+        transform:scale(1);
+    }
+}
+
+@keyframes workflowLoading{
+    from{
         background-position:0%;
-
     }
-
-
-    to {
-
+    to{
         background-position:200%;
-
     }
-
 }
-
-
 
 
 
