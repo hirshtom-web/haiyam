@@ -1152,67 +1152,61 @@ INDUSTRIES
 
 }
 
-```css
 /* =====================
 FOUNDERS
 ===================== */
 
 .tm-founders{
-
     padding:100px 0;
     background:transparent;
-
 }
-
 
 .tm-founders__container{
-
     max-width:1440px;
     margin:0 auto;
-
 }
-
 
 /* TITLE */
 
 .tm-founders__title{
-
     text-align:left;
-    direction:ltr;
     margin-bottom:60px;
-
 }
-
 
 .tm-founders__title p{
-
     opacity:.7;
-
 }
 
+/* ---------------- Slider ---------------- */
 
-/* GRID */
+.tm-founders__slider{
+    overflow:hidden;
+    width:100%;
+}
 
 .tm-founders__grid{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-
+    display:flex;
+    gap:30px;
+    transition:transform .5s ease;
 }
 
-
-/* CARD */
+/* ---------------- Card ---------------- */
 
 .tm-founder-card{
+
+    width:600px;
+    height:300px;
+    flex:0 0 600px;
+
+    display:flex;
+    flex-direction:row;
 
     position:relative;
 
     border-radius:28px;
     padding:2px;
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #8B5CF6,
         #3B82F6,
@@ -1224,43 +1218,28 @@ FOUNDERS
     background-size:300% 300%;
     animation:tm-founder-gradient 8s ease infinite;
 
-    transition:.4s ease;
-
-    display:flex;
-    flex-direction:column;
-
+    transition:.35s;
 }
-
 
 .tm-founder-card:hover{
-
-    transform:translateY(-8px);
-
+    transform:translateY(-6px);
 }
 
-
-/* INNER SECTIONS */
-
-.tm-founder-card__image,
-.tm-founder-card__content{
-
-    background:white;
-    flex-shrink:0;
-
-}
-
-
-/* IMAGE */
+/* ---------------- Image ---------------- */
 
 .tm-founder-card__image{
 
-    height:390px;
+    width:200px;
+    height:300px;
+
     overflow:hidden;
 
-    border-radius:26px 26px 0 0;
+    background:#fff;
 
+    border-radius:26px 0 0 26px;
+
+    flex-shrink:0;
 }
-
 
 .tm-founder-card__image img{
 
@@ -1268,120 +1247,148 @@ FOUNDERS
     height:100%;
 
     object-fit:cover;
-    display:block;
+    object-position:center;
 
+    display:block;
 }
 
-
-/* CONTENT */
+/* ---------------- Content ---------------- */
 
 .tm-founder-card__content{
 
-    padding:35px;
+    width:400px;
+    height:300px;
 
-    border-radius:0 0 26px 26px;
+    background:#fff;
+
+    border-radius:0 26px 26px 0;
+
+    padding:35px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
-
 }
-
-
-/* TEXT */
 
 .tm-founder-card__quote{
 
     font-size:20px;
     line-height:1.6;
 
-    margin:0 0 25px;
+    margin:0 0 24px;
 
     font-style:italic;
-
 }
-
 
 .tm-founder-card__signature{
 
     font-weight:600;
-
 }
 
+/* ---------------- Navigation ---------------- */
 
-/* ANIMATED COLOR BORDER */
+.tm-founders__nav{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:40px;
+}
+
+.tm-founders__nav button{
+
+    width:46px;
+    height:46px;
+
+    border:1px solid #bbb;
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.tm-founders__nav button:hover{
+
+    border-color:#000;
+}
+
+.tm-founders__nav svg{
+
+    width:18px;
+    height:18px;
+}
+
+.tm-slider-count{
+
+    min-width:55px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+/* ---------------- Animated Border ---------------- */
 
 @keyframes tm-founder-gradient{
 
     0%{
-
         background-position:0% 50%;
-
     }
 
     50%{
-
         background-position:100% 50%;
-
     }
 
     100%{
-
         background-position:0% 50%;
-
     }
 
 }
 
-
-/* MOBILE */
+/* ---------------- Mobile ---------------- */
 
 @media(max-width:768px){
 
     .tm-founders{
-
         padding:70px 0;
-
     }
-
-
-    .tm-founders__grid{
-
-        grid-template-columns:1fr;
-        gap:30px;
-
-    }
-
 
     .tm-founder-card{
 
+        width:100%;
         height:auto;
 
+        flex-direction:column;
     }
-
 
     .tm-founder-card__image{
 
+        width:100%;
         height:280px;
 
+        border-radius:26px 26px 0 0;
     }
-
 
     .tm-founder-card__content{
 
-        padding:30px;
+        width:100%;
+        height:auto;
 
-    }
-
-
-    .tm-founder-card__quote{
-
-        font-size:18px;
-
+        border-radius:0 0 26px 26px;
     }
 
 }
-
       
 /* =====================
 CTA
@@ -2673,99 +2680,97 @@ Ambitious international brands looking to establish a meaningful presence in Isr
 
 
 <!-- FOUNDERS -->
-
+    
 <section id="founders" class="tm-founders">
 
-<div class="container tm-founders__container">
-    
-<div class="section-title tm-founders__title">
+    <div class="container tm-founders__container">
 
-    <h2>
-        The people behind Haiyam
-    </h2>
+        <div class="section-title tm-founders__title">
 
-    <p>
-        A family-owned company built on relationships, trust, and execution.
-    </p>
+            <h2>The people behind Haiyam</h2>
 
-</div>
-
-
-        <div class="tm-founders__grid">
-
-
-            <!-- Founder Card 1 -->
-
-            <div class="tm-founder-card">
-
-                <div class="tm-founder-card__image">
-
-                    <img src="https://static.wixstatic.com/media/1799ca_9c829b7ef4134427b7d1720aba1dba02~mv2.jpg" alt="Tom Hirsh, Founder">
-
-                </div>
-
-
-                <div class="tm-founder-card__content">
-
-                    <p class="tm-founder-card__quote">
-
-                        "Building meaningful partnerships starts with trust,
-                        vision, and a commitment to creating lasting value."
-
-                    </p>
-
-
-                    <div class="tm-founder-card__signature">
-
-                        Founder Name
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Founder Card 2 -->
-
-
-            <div class="tm-founder-card">
-
-
-                <div class="tm-founder-card__image">
-
-                    <img src="https://static.wixstatic.com/media/1799ca_05729c7135174bbab88cd37589370cc8~mv2.png" alt="Julie Steiner, Founder">
-
-                </div>
-
-
-                <div class="tm-founder-card__content">
-
-                    <p class="tm-founder-card__quote">
-
-                        "We discover exceptional brands and help them grow
-                        through deep local knowledge and global thinking."
-
-                    </p>
-
-
-                    <div class="tm-founder-card__signature">
-
-                        Founder Name
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
+            <p>
+                A family-owned company built on relationships, trust, and execution.
+            </p>
 
         </div>
 
+        <div class="tm-founders__slider">
+
+            <div class="tm-founders__grid">
+
+                <!-- Founder Card 1 -->
+                <div class="tm-founder-card">
+
+                    <div class="tm-founder-card__image">
+                        <img src="https://static.wixstatic.com/media/1799ca_9c829b7ef4134427b7d1720aba1dba02~mv2.jpg" alt="Tom Hirsh">
+                    </div>
+
+                    <div class="tm-founder-card__content">
+
+                        <p class="tm-founder-card__quote">
+                            "Building meaningful partnerships starts with trust,
+                            vision, and a commitment to creating lasting value."
+                        </p>
+
+                        <div class="tm-founder-card__signature">
+                            Founder Name
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Founder Card 2 -->
+                <div class="tm-founder-card">
+
+                    <div class="tm-founder-card__image">
+                        <img src="https://static.wixstatic.com/media/1799ca_05729c7135174bbab88cd37589370cc8~mv2.png" alt="Julie Steiner">
+                    </div>
+
+                    <div class="tm-founder-card__content">
+
+                        <p class="tm-founder-card__quote">
+                            "We discover exceptional brands and help them grow
+                            through deep local knowledge and global thinking."
+                        </p>
+
+                        <div class="tm-founder-card__signature">
+                            Founder Name
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Navigation goes OUTSIDE the slider -->
+        <div class="tm-founders__nav">
+
+            <button class="tm-prev">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+
+            </button>
+
+            <div class="tm-slider-count">
+                1 / 2
+            </div>
+
+            <button class="tm-next">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+
+            </button>
+
+        </div>
 
     </div>
 
@@ -3513,6 +3518,58 @@ answerButtons.forEach(button=>{
 
 });
 
+
+const track = document.querySelector(".tm-founders__grid");
+const cards = document.querySelectorAll(".tm-founder-card");
+
+const next = document.querySelector(".tm-next");
+const prev = document.querySelector(".tm-prev");
+
+const counter = document.querySelector(".tm-slider-count");
+
+let current = 0;
+
+function updateSlider(){
+
+    const gap = 30;
+
+    const cardWidth = cards[0].offsetWidth + gap;
+
+    track.style.transform =
+        `translateX(-${current * cardWidth}px)`;
+
+    counter.textContent =
+        `${current + 1} / ${cards.length}`;
+
+}
+
+next.addEventListener("click",()=>{
+
+    current++;
+
+    if(current >= cards.length){
+        current = 0;
+    }
+
+    updateSlider();
+
+});
+
+prev.addEventListener("click",()=>{
+
+    current--;
+
+    if(current < 0){
+        current = cards.length - 1;
+    }
+
+    updateSlider();
+
+});
+
+window.addEventListener("resize",updateSlider);
+
+updateSlider();
 
     
     
