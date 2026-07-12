@@ -629,7 +629,7 @@
 
 .tm-workflow-card--value{
     top:170px;
-    left:-30px;
+    left:-10px;
     width:clamp(330px,24vw,410px);
     padding:clamp(32px,2vw,40px);
     z-index:5;
