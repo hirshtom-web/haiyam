@@ -528,32 +528,125 @@ font-size:clamp(38px,5vw,58px);
 
 }
 
-.button {
+/* BUTTONS */
 
+.button-group{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.button{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     padding:16px 30px;
     border-radius:50px;
     font-weight:600;
-    transition:.3s;
-
+    transition:.3s ease;
 }
 
-.button.primary {
+/* PRIMARY */
 
+.button.primary{
+    color:#fff;
     background:#111;
-    color:white;
-
+    border:2px solid transparent;
+    background-clip:padding-box;
+    position:relative;
 }
 
-.button.secondary {
-
-    background:white;
-    border:1px solid var(--border);
-
+.button.primary::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:50px;
+    background:linear-gradient(
+        90deg,
+        #EC4899,
+        #8B5CF6,
+        #3B82F6,
+        #06B6D4,
+        #EC4899
+    );
+    background-size:300% 100%;
+    animation:buttonStroke 6s linear infinite;
+    z-index:-1;
 }
 
-.button:hover {
+.button.primary::after{
+    content:"";
+    position:absolute;
+    inset:2px;
+    border-radius:50px;
+    background:#111;
+    z-index:-1;
+}
 
+/* SECONDARY */
+
+.button.secondary{
+    padding:16px 10px;
+    background:transparent;
+    border:none;
+    color:#111;
+    gap:8px;
+}
+
+.button.secondary::after{
+    content:"→";
+    font-size:18px;
+    transition:.3s ease;
+}
+
+.button.secondary:hover::after{
+    transform:translateX(5px);
+}
+
+/* HOVER */
+
+.button:hover{
     transform:translateY(-4px);
+}
+
+.button.primary:hover{
+    box-shadow:
+        0 15px 40px rgba(139,92,246,.25);
+}
+
+/* COLOR MOTION */
+
+@keyframes buttonStroke{
+    from{
+        background-position:0% 50%;
+    }
+    to{
+        background-position:300% 50%;
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .button-group{
+        flex-direction:row;
+        align-items:center;
+        gap:14px;
+    }
+
+    .button{
+        padding:14px 22px;
+        white-space:nowrap;
+    }
+
+    .button.secondary{
+        padding:14px 8px;
+    }
 
 }
 
