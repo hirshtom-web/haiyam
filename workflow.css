@@ -443,145 +443,91 @@
 03. CENTER WORKFLOW FEATURE CARD
 ========================================= */
 
-
-/* MAIN CARD */
-
-.tm-workflow-main {
-
+.tm-workflow-main{
     width:360px;
-
     min-height:560px;
-
     padding:40px;
-
     border-radius:40px;
-
-    background:
-
-        linear-gradient(
-            160deg,
-            #eff6ff,
-            #bfdbfe
-        );
-
+    background:linear-gradient(160deg,#eff6ff,#bfdbfe);
     color:#111827;
-
-    box-shadow:
-
-        0 35px 80px rgba(37,99,235,.18);
-
+    box-shadow:0 35px 80px rgba(37,99,235,.18);
     position:relative;
-
     z-index:2;
-
 }
 
-
-
-/* STATUS */
-
-.tm-workflow-main__status {
-
+.tm-workflow-main__status{
     display:inline-flex;
-
     width:max-content;
-
     padding:8px 16px;
-
     background:#dbeafe;
-
     border:1px solid #bfdbfe;
-
     border-radius:999px;
-
     color:#2563eb;
-
     font-size:13px;
-
     font-weight:600;
-
     margin-bottom:30px;
-
 }
 
-
-
-/* CONTENT */
-
-.tm-workflow-main h3 {
-
+.tm-workflow-main h3{
     margin:0 0 20px;
-
     font-size:34px;
-
     line-height:1.2;
-
     color:#111827;
-
 }
 
-
-.tm-workflow-main p {
-
+.tm-workflow-main p{
     color:#475569;
-
     line-height:1.7;
-
 }
 
-
-
-/* INNER STEPS */
-
-.tm-workflow-main__steps {
-
+.tm-workflow-main__steps{
     margin-top:40px;
+    height:58px;
+    overflow:hidden;
+    position:relative;
+}
 
+.tm-workflow-main__slider{
     display:flex;
-
     flex-direction:column;
-
-    gap:15px;
-
+    animation:workflowSlider 9s linear infinite;
 }
 
-
-.tm-workflow-main__steps div {
-
+.tm-workflow-main__slider div{
+    height:58px;
     padding:15px;
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
     background:rgba(255,255,255,.65);
-
     backdrop-filter:blur(15px);
-
     -webkit-backdrop-filter:blur(15px);
-
     border:1px solid rgba(255,255,255,.8);
-
     border-radius:14px;
-
     color:#111827;
-
-    box-shadow:
-
-        0 10px 30px rgba(15,23,42,.06);
-
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+    flex-shrink:0;
 }
 
-
-
-.tm-workflow-main__steps span {
-
+.tm-workflow-main__slider span{
     color:#2563eb;
-
     font-weight:700;
+    min-width:28px;
+}
 
+@keyframes workflowSlider{
+    0%,25%{
+        transform:translateY(0);
+    }
+    33%,58%{
+        transform:translateY(-58px);
+    }
+    66%,91%{
+        transform:translateY(-116px);
+    }
+    100%{
+        transform:translateY(-174px);
+    }
 }
 
 
