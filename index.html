@@ -961,45 +961,36 @@ transform:translate3d(0,0,0);
 ================================ */
 
 .tm-heal100__slider{
-
-display:none;
-overflow:hidden;
-padding:40px 0;
-
+    display:none;
+    overflow:hidden;
+    padding:40px 0;
+    width:100%;
 }
 
 .tm-heal100__track{
-
-display:flex;
-gap:60px;
-width:max-content;
-
-animation:tm-heal100-slide 28s linear infinite;
-
+    display:flex;
+    align-items:center;
+    gap:60px;
+    width:max-content;
+    animation:tm-heal100-slide 28s linear infinite;
+    will-change:transform;
 }
 
 .tm-heal100__track img{
-
-width:70px;
-height:auto;
-flex-shrink:0;
-
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    flex:0 0 70px;
+    max-width:none;
 }
 
 @keyframes tm-heal100-slide{
-
-from{
-
-transform:translateX(0);
-
-}
-
-to{
-
-transform:translateX(-50%);
-
-}
-
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
 }
 
 /* ===============================
@@ -1008,69 +999,46 @@ transform:translateX(-50%);
 
 @media(max-width:768px){
 
-.tm-heal100{
+    .tm-heal100{
+        flex-direction:column;
+    }
 
-flex-direction:column;
+    .tm-heal100__visual,
+    .tm-heal100__content{
+        width:100%;
+    }
 
-}
+    .tm-heal100__bg,
+    .tm-heal100__floating{
+        display:none;
+    }
 
-.tm-heal100__visual,
-.tm-heal100__content{
+    .tm-heal100__slider{
+        display:block;
+    }
 
-width:100%;
+    .tm-heal100__content{
+        order:1;
+        padding:40px 24px;
+    }
 
-}
+    .tm-heal100__visual{
+        order:2;
+    }
 
-/* Hide desktop logo artwork */
+    .tm-heal100__text{
+        font-size:16px;
+        margin-bottom:40px;
+    }
 
-.tm-heal100__bg,
-.tm-heal100__floating{
+    .tm-heal100__stats{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+    }
 
-display:none;
-
-}
-
-/* Show mobile slider */
-
-.tm-heal100__slider{
-
-display:block;
-
-}
-
-.tm-heal100__content{
-
-order:1;
-padding:40px 24px;
-
-}
-
-.tm-heal100__visual{
-
-order:2;
-
-}
-
-.tm-heal100__text{
-
-font-size:16px;
-margin-bottom:40px;
-
-}
-
-.tm-heal100__stats{
-
-grid-template-columns:repeat(2,1fr);
-gap:30px;
-
-}
-
-.tm-heal100__number{
-
-font-size:42px;
-
-}
-
+    .tm-heal100__number{
+        font-size:42px;
+    }
 }
 
       
