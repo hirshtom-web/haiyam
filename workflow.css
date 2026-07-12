@@ -660,94 +660,6 @@
 
 .tm-workflow__stage--right {
 
-    position: relative;
-
-    height: 560px;
-
-    width: 100%;
-
-}
-
-
-/* RIGHT CARDS */
-
-.tm-workflow__stage--right .tm-workflow-card {
-
-    position: absolute;
-
-    width: 280px;
-
-}
-
-
-/* TOP CARD */
-
-.tm-workflow__stage--right .tm-workflow-card:nth-child(1) {
-
-    top: 30px;
-
-    right: 0;
-
-}
-
-
-/* MIDDLE CARD */
-
-.tm-workflow__stage--right .tm-workflow-card:nth-child(2) {
-
-    top: 220px;
-
-    right: -40px;
-
-}
-
-
-/* BOTTOM CARD */
-
-.tm-workflow__stage--right .tm-workflow-card:nth-child(3) {
-
-    bottom: 20px;
-
-    left: 0;
-
-}
-
-
-/* DARK CARD */
-
-.tm-workflow-card--dark {
-
-    background: #111827;
-
-    color: white;
-
-}
-
-
-.tm-workflow-card--dark h4 {
-
-    color: white;
-
-}
-
-
-.tm-workflow-card--dark p {
-
-    color: #cbd5e1;
-
-}
-
-
-
-/* =========================================
-04. RIGHT WORKFLOW
-========================================= */
-
-
-/* RIGHT STAGE */
-
-.tm-workflow__stage--right {
-
     position:relative;
 
     height:560px;
@@ -758,7 +670,7 @@
 
 
 
-/* ALL RIGHT CARDS */
+/* BASE CARDS */
 
 .tm-workflow__stage--right .tm-workflow-card {
 
@@ -770,7 +682,7 @@
 
     border-radius:28px;
 
-    background:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.96);
 
     backdrop-filter:blur(18px);
 
@@ -779,25 +691,21 @@
     border:1px solid rgba(148,163,184,.25);
 
     box-shadow:
-
         0 25px 60px rgba(15,23,42,.12);
 
     color:#111827;
 
-    z-index:2;
-
 }
 
 
-/* CARD HEADINGS */
+
+/* TEXT */
 
 .tm-workflow-card h4 {
 
     margin:0 0 15px;
 
     font-size:22px;
-
-    line-height:1.2;
 
     color:#111827;
 
@@ -817,47 +725,53 @@
 
 
 /* =========================
-TOP COMPLETE CARD
+COMPLETE CARD
+STARTS FROM RIGHT EDGE
 ========================= */
 
 .tm-workflow__stage--right .tm-workflow-card:nth-child(1) {
 
     top:40px;
 
-    left:0;
+    right:-70px;
+
+    z-index:2;
 
 }
 
 
 
 /* =========================
-MIDDLE GROWTH CARD
+GROWTH CARD
+STARTS FROM RIGHT EDGE
 ========================= */
 
 .tm-workflow__stage--right .tm-workflow-card:nth-child(2) {
 
     top:250px;
 
-    left:0;
+    right:-70px;
+
+    z-index:2;
 
 }
 
 
 
 /* =========================
-OVERLAPPING VALUE CARD
+LONG TERM VALUE OVERLAY
+MOVES LEFT INTO CENTER
 ========================= */
 
 .tm-workflow__stage--right .tm-workflow-card:nth-child(3) {
 
-    top:155px;
+    top:150px;
 
-    left:-90px;
+    left:-100px;
 
     z-index:5;
 
     background:
-
         linear-gradient(
             135deg,
             #ffffff,
@@ -867,14 +781,13 @@ OVERLAPPING VALUE CARD
     border:1px solid rgba(34,197,94,.25);
 
     box-shadow:
-
-        0 35px 80px rgba(34,197,94,.18);
+        0 35px 90px rgba(34,197,94,.18);
 
 }
 
 
 
-/* GREEN ACCENT */
+/* GREEN ACCENT STRIPE */
 
 .tm-workflow__stage--right .tm-workflow-card:nth-child(3)::before {
 
@@ -884,9 +797,9 @@ OVERLAPPING VALUE CARD
 
     left:0;
 
-    top:30px;
+    top:25px;
 
-    bottom:30px;
+    bottom:25px;
 
     width:5px;
 
@@ -898,17 +811,15 @@ OVERLAPPING VALUE CARD
 
 
 
-/* =========================
-GREEN COMPLETE BADGE
-========================= */
+/* COMPLETE BADGE */
 
 .tm-workflow-card__top {
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
+
+    align-items:center;
 
     margin-bottom:25px;
 
@@ -925,13 +836,13 @@ GREEN COMPLETE BADGE
 
     height:28px;
 
-    border-radius:50%;
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    border-radius:50%;
 
     background:#22c55e;
 
@@ -941,9 +852,7 @@ GREEN COMPLETE BADGE
 
 
 
-/* =========================
-PLACEHOLDER GRAPH
-========================= */
+/* GROWTH PLACEHOLDER */
 
 .tm-workflow-placeholder {
 
