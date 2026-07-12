@@ -1291,6 +1291,31 @@ CTA
 
     color:#fff!important;
 
+    background:transparent;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    z-index:1;
+
+}
+
+
+/* animated gradient stroke */
+
+.cta .button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50px;
+
+    padding:2px;
+
     background:linear-gradient(
         90deg,
         #EC4899,
@@ -1304,39 +1329,24 @@ CTA
 
     animation:buttonStroke 6s linear infinite;
 
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
 
 }
 
 
-/* transparent center */
-
-.cta .button::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:2px;
-
-    background:transparent;
-
-    border-radius:48px;
-
-    z-index:0;
-
-}
-
-
-/* keep text above */
+/* text above stroke */
 
 .cta .button span{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
 
@@ -1357,7 +1367,7 @@ CTA
     transform:translateY(-2px);
 
     box-shadow:
-        0 8px 24px rgba(139,92,6,0.25);
+        0 8px 24px rgba(139,92,246,.25);
 
 }
       
