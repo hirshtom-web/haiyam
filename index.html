@@ -1152,13 +1152,589 @@ INDUSTRIES
 
 }
 
-/* =====================
-FOUNDERS
+      /* =====================
+WORKFLOW
 ===================== */
+
+.tm-workflow{
+
+    width:100%;
+
+    padding:120px 0;
+
+    background:#f4f5f7;
+
+    overflow:hidden;
+
+}
+
+
+.tm-workflow__container{
+
+    width:min(1500px, 92%);
+
+    margin:0 auto;
+
+}
+
+
+
+/* =====================
+HEADER
+===================== */
+
+
+.tm-workflow__header{
+
+    max-width:700px;
+
+    margin-bottom:80px;
+
+}
+
+
+.tm-workflow__header h2{
+
+    margin:0 0 20px;
+
+    font-size:48px;
+
+    line-height:1.1;
+
+    color:#111827;
+
+}
+
+
+.tm-workflow__header p{
+
+    margin:0;
+
+    color:#6b7280;
+
+    font-size:18px;
+
+}
+
+
+
+/* =====================
+FLOW GRID
+===================== */
+
+
+.tm-workflow__flow{
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(260px,1fr)
+    160px
+    minmax(360px,1.2fr)
+    160px
+    minmax(260px,1fr);
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+/* =====================
+STAGES
+===================== */
+
+
+.tm-workflow__stage{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+/* =====================
+CARDS
+===================== */
+
+
+.tm-workflow-card{
+
+    background:#ffffff;
+
+    border:1px solid rgba(17,24,39,.06);
+
+    box-shadow:
+    0 20px 50px rgba(15,23,42,.08);
+
+    padding:28px;
+
+    min-height:150px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    transition:
+    transform .5s cubic-bezier(.16,1,.3,1),
+    box-shadow .3s ease;
+
+}
+
+
+.tm-workflow-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 30px 70px rgba(15,23,42,.12);
+
+}
+
+
+
+.tm-workflow-card h4{
+
+    margin:15px 0 10px;
+
+    font-size:20px;
+
+    color:#111827;
+
+}
+
+
+.tm-workflow-card p{
+
+    margin:0;
+
+    color:#6b7280;
+
+    line-height:1.6;
+
+}
+
+
+
+/* =====================
+CARD VARIATIONS
+===================== */
+
+
+.tm-workflow-card--blue{
+
+    background:#eef6ff;
+
+    border-color:#cfe4ff;
+
+}
+
+
+
+.tm-workflow-card--purple{
+
+    background:#f6f0ff;
+
+    border-color:#e4d5ff;
+
+}
+
+
+
+.tm-workflow-card--green{
+
+    background:#effcf5;
+
+    border-color:#c8f3db;
+
+}
+
+
+
+.tm-workflow-card--dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+
+.tm-workflow-card--dark h4{
+
+    color:white;
+
+}
+
+
+.tm-workflow-card--dark p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+/* =====================
+CARD HEADER
+===================== */
+
+
+.tm-workflow-card__top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#475569;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+.tm-workflow-check{
+
+    width:28px;
+
+    height:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+
+
+/* =====================
+PLACEHOLDER LINES
+===================== */
+
+
+.tm-workflow-placeholder{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+.tm-workflow-placeholder span{
+
+    height:8px;
+
+    width:100%;
+
+    background:#e5e7eb;
+
+    display:block;
+
+}
+
+
+.tm-workflow-placeholder span:nth-child(2){
+
+    width:75%;
+
+}
+
+
+.tm-workflow-placeholder span:nth-child(3){
+
+    width:55%;
+
+}
+
+
+
+/* =====================
+CENTER FEATURE CARD
+===================== */
+
+
+.tm-workflow-main{
+
+    min-height:420px;
+
+    padding:50px;
+
+    background:#111827;
+
+    color:white;
+
+    box-shadow:
+
+    0 40px 100px rgba(15,23,42,.25);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+.tm-workflow-main__status{
+
+    display:inline-flex;
+
+    width:max-content;
+
+    padding:8px 16px;
+
+    background:#1f2937;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:#a7f3d0;
+
+    font-size:13px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.tm-workflow-main h3{
+
+    margin:0 0 20px;
+
+    font-size:34px;
+
+}
+
+
+
+.tm-workflow-main p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+}
+
+
+
+/* =====================
+INNER STEPS
+===================== */
+
+
+.tm-workflow-main__steps{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.tm-workflow-main__steps div{
+
+    padding:15px;
+
+    background:#1f2937;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.tm-workflow-main__steps span{
+
+    color:#60a5fa;
+
+    font-weight:700;
+
+}
+
+
+
+/* =====================
+CURVED ARROWS
+===================== */
+
+
+.tm-workflow__arrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.tm-workflow__arrow svg{
+
+    width:160px;
+
+    height:120px;
+
+}
+
+
+
+.tm-workflow__arrow path{
+
+    fill:none;
+
+    stroke:#94a3b8;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+}
+
+
+
+/* =====================
+REVEAL INITIAL STATES
+===================== */
+
+
+.tm-workflow-card,
+.tm-workflow-main,
+.tm-workflow__arrow{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+
+.tm-workflow.is-visible .tm-workflow__stage--left .tm-workflow-card{
+
+    animation:
+    workflowReveal .8s forwards;
+
+}
+
+
+.tm-workflow.is-visible .tm-workflow-main{
+
+    animation:
+    workflowCenter .9s .7s forwards;
+
+}
+
+
+.tm-workflow.is-visible .tm-workflow__stage--right .tm-workflow-card{
+
+    animation:
+    workflowReveal .8s 1.4s forwards;
+
+}
+
+
+.tm-workflow.is-visible .tm-workflow__arrow{
+
+    animation:
+    workflowArrow .8s .5s forwards;
+
+}
+
+
+
+/* =====================
+ANIMATIONS
+===================== */
+
+
+@keyframes workflowReveal{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes workflowCenter{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes workflowArrow{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
 
 /* =====================
 FOUNDERS
 ===================== */
+
 
 .tm-founders{
     padding:100px 0;
@@ -2789,6 +3365,320 @@ Ambitious international brands looking to establish a meaningful presence in Isr
 
 </section>
 
+    
+<!-- WORKFLOW -->    
+
+    <section class="tm-workflow" id="workflow">
+
+    <div class="tm-workflow__container">
+
+
+        <div class="tm-workflow__header">
+
+            <h2>
+                How the process works
+            </h2>
+
+            <p>
+                From discovery to execution, every stage is structured and connected.
+            </p>
+
+        </div>
+
+
+
+        <div class="tm-workflow__flow">
+
+
+            <!-- =====================
+            LEFT STAGE
+            ===================== -->
+
+            <div class="tm-workflow__stage tm-workflow__stage--left">
+
+
+                <div class="tm-workflow-card tm-workflow-card--blue">
+
+                    <div class="tm-workflow-card__top">
+
+                        <span class="tm-workflow-card__label">
+                            Selection
+                        </span>
+
+
+                        <span class="tm-workflow-check">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Brand discovery
+                    </h4>
+
+
+                    <p>
+                        Identify opportunities and evaluate fit.
+                    </p>
+
+                </div>
+
+
+
+
+                <div class="tm-workflow-card">
+
+
+                    <div class="tm-workflow-placeholder">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <h4>
+                        Market analysis
+                    </h4>
+
+
+                    <p>
+                        Data, positioning and audience insights.
+                    </p>
+
+
+                </div>
+
+
+
+
+                <div class="tm-workflow-card tm-workflow-card--purple">
+
+
+                    <div class="tm-workflow-card__top">
+
+                        <span>
+                            Approved
+                        </span>
+
+
+                        <span class="tm-workflow-check">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Final selection
+                    </h4>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- =====================
+            ARROW ONE
+            ===================== -->
+
+
+            <div class="tm-workflow__arrow">
+
+
+                <svg viewBox="0 0 220 120">
+
+                    <path
+                    d="M10 20 C80 20, 80 100, 210 100"
+                    />
+
+                </svg>
+
+
+            </div>
+
+
+
+
+
+            <!-- =====================
+            CENTER STAGE
+            ===================== -->
+
+            <div class="tm-workflow__stage tm-workflow__stage--center">
+
+
+                <div class="tm-workflow-main">
+
+
+                    <div class="tm-workflow-main__status">
+
+                        Processing
+
+                    </div>
+
+
+                    <h3>
+                        Strategic execution
+                    </h3>
+
+
+                    <p>
+                        Connecting brands, teams and markets through a controlled workflow.
+                    </p>
+
+
+
+                    <div class="tm-workflow-main__steps">
+
+
+                        <div>
+                            <span>01</span>
+                            Research
+                        </div>
+
+
+                        <div>
+                            <span>02</span>
+                            Planning
+                        </div>
+
+
+                        <div>
+                            <span>03</span>
+                            Launch
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <!-- =====================
+            ARROW TWO
+            ===================== -->
+
+
+            <div class="tm-workflow__arrow">
+
+
+                <svg viewBox="0 0 220 120">
+
+                    <path
+                    d="M10 100 C130 100, 130 20, 210 20"
+                    />
+
+                </svg>
+
+
+            </div>
+
+
+
+
+
+            <!-- =====================
+            RIGHT STAGE
+            ===================== -->
+
+
+            <div class="tm-workflow__stage tm-workflow__stage--right">
+
+
+                <div class="tm-workflow-card tm-workflow-card--green">
+
+
+                    <div class="tm-workflow-card__top">
+
+                        <span>
+                            Complete
+                        </span>
+
+
+                        <span class="tm-workflow-check">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Partnership ready
+                    </h4>
+
+
+                    <p>
+                        Clear execution path established.
+                    </p>
+
+
+                </div>
+
+
+
+
+                <div class="tm-workflow-card">
+
+
+                    <h4>
+                        Growth tracking
+                    </h4>
+
+
+                    <div class="tm-workflow-placeholder">
+
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="tm-workflow-card tm-workflow-card--dark">
+
+
+                    <h4>
+                        Long-term value
+                    </h4>
+
+
+                    <p>
+                        Continuous improvement and expansion.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
 
 
 <!-- FOUNDERS -->
@@ -3689,7 +4579,57 @@ window.addEventListener("resize",updateSlider);
 
 updateSlider();
 
-    
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+    const workflow = document.querySelector(".tm-workflow");
+
+
+    if(!workflow) return;
+
+
+
+    const observer = new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(entry=>{
+
+
+                if(entry.isIntersecting){
+
+
+                    workflow.classList.add("is-visible");
+
+
+                    observer.unobserve(workflow);
+
+
+                }
+
+
+            });
+
+
+        },
+
+        {
+            threshold:0.25
+        }
+
+
+    );
+
+
+
+    observer.observe(workflow);
+
+
+
+});
+
     
   </script>
 
