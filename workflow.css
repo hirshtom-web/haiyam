@@ -2,215 +2,126 @@
 01. WORKFLOW SECTION + GRID + ARROWS
 ========================================= */
 
-
 .tm-workflow {
-
     width:100%;
-
     padding:120px 0;
-
     overflow:hidden;
-
 }
-
 
 .tm-workflow__container {
-
     width:100%;
-
 }
-
 
 /* HEADER */
 
 .tm-workflow__header {
-
     max-width:700px;
-
     margin-bottom:80px;
-
 }
-
 
 .tm-workflow__header h2 {
-
     margin:0 0 20px;
-
     font-size:48px;
-
     line-height:1.1;
-
     color:#111827;
-
 }
-
 
 .tm-workflow__header p {
-
     margin:0;
-
     color:#6b7280;
-
     font-size:18px;
-
 }
-
 
 /* GRID */
 
 .tm-workflow__flow {
-
     display:grid;
-
     grid-template-columns:
         minmax(300px,1fr)
         140px
         360px
         140px
         minmax(300px,1fr);
-
     align-items:center;
-
     gap:20px;
-
 }
-
 
 .tm-workflow__stage {
-
     display:flex;
-
     flex-direction:column;
-
 }
-
 
 /* ARROWS */
 
 .tm-workflow__arrow {
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
 }
-
 
 .tm-workflow__arrow svg {
-
     width:140px;
-
     height:120px;
-
 }
-
 
 .tm-workflow__arrow path {
-
     fill:none;
-
     stroke:#94a3b8;
-
     stroke-width:3;
-
     stroke-linecap:round;
-
 }
-
 
 /* INITIAL STATES */
 
 .tm-workflow__stage .tm-workflow-card,
 .tm-workflow-main,
 .tm-workflow__arrow {
-
     opacity:0;
-
     transform:translateY(40px);
-
 }
-
 
 /* ANIMATIONS */
 
 .tm-workflow.is-visible .tm-workflow__stage--left .tm-workflow-card {
-
     animation:workflowReveal .8s forwards;
-
 }
-
 
 .tm-workflow.is-visible .tm-workflow-main {
-
     animation:workflowCenter .9s .7s forwards;
-
 }
-
 
 .tm-workflow.is-visible .tm-workflow__stage--right .tm-workflow-card {
-
     animation:workflowReveal .8s 1.4s forwards;
-
 }
-
 
 .tm-workflow.is-visible .tm-workflow__arrow {
-
     animation:workflowArrow .8s .5s forwards;
-
 }
-
-
 
 @keyframes workflowReveal {
-
     to {
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }
-
 
 @keyframes workflowCenter {
-
     0% {
-
         opacity:0;
-
         transform:scale(.85);
-
     }
-
     100% {
-
         opacity:1;
-
         transform:scale(1);
-
     }
-
 }
-
 
 @keyframes workflowArrow {
-
     to {
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }
-
-
 
 
 /* =========================================
