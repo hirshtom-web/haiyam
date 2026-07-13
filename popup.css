@@ -101,10 +101,10 @@ WIZARD PROGRESS BAR
     width:25%;
     background:linear-gradient(
         90deg,
-        #764bdb,
-        #1b1158
+        #8B5CF6 0%,
+        #C026D3 50%,
+        #1b1158 100%
     );
-    background-size:300% 100%;
     border-radius:20px;
     transition:width .5s ease;
 }
