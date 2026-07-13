@@ -191,8 +191,13 @@ WIZARD PROGRESS BAR
     gap:10px;
 }
 
-.phone select{
-    width:100px;
+.phone .area-code{
+    width:90px;
+    flex-shrink:0;
+}
+
+.phone .phone-number{
+    flex:1;
 }
 
 /* SUBMIT */
