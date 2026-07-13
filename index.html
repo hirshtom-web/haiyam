@@ -2907,35 +2907,30 @@ window.addEventListener("scroll", () => {
     const blobs = document.querySelectorAll(".blob");
 
 
-    document.addEventListener("mousemove", (e)=>{
+  document.addEventListener("mousemove", (e)=>{
 
+    // Show header when mouse reaches the top (desktop only)
+    if (window.innerWidth >= 1024 && e.clientY < 80) {
+        header.classList.remove("header-hidden");
+    }
 
-        const x =
-        (e.clientX / window.innerWidth - .5) * 30;
+    const x =
+    (e.clientX / window.innerWidth - .5) * 30;
 
+    const y =
+    (e.clientY / window.innerHeight - .5) * 30;
 
-        const y =
-        (e.clientY / window.innerHeight - .5) * 30;
+    blobs.forEach((blob,index)=>{
 
+        const speed =
+        (index + 1) * .5;
 
-
-        blobs.forEach((blob,index)=>{
-
-
-            const speed =
-            (index + 1) * .5;
-
-
-            blob.style.transform =
-            `translate(${x * speed}px, ${y * speed}px)`;
-
-
-        });
-
+        blob.style.transform =
+        `translate(${x * speed}px, ${y * speed}px)`;
 
     });
 
-
+});
 
 
 
