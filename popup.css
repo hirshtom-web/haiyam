@@ -191,10 +191,8 @@ WIZARD PROGRESS BAR
     background:
     linear-gradient(
         90deg,
-        #EC4899,
-        #C026D3,
-        #8B5CF6,
-        #3B82F6
+        #764bdb,
+        #1b1158,
     );
 
 
@@ -254,7 +252,7 @@ WIZARD PROGRESS BAR
 .wizard-step h3{
   
 
-    font-size:34px;
+    font-size:28px;
 
     line-height:1.15;
 
